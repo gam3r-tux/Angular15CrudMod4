@@ -1,0 +1,41 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <h4>Alta de Películas</h4>
+      <div class="form-group">
+        <label for="title">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="tutorial.title"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Género</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="tutorial.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group" hidden>
+        <label for="published">En cines o plataformas</label>
+        <input type="checkbox" checked>
+      </div>
+
+      <button (click)="saveTutorial()" class="btn-blue btn-kits">Guardar</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>La película fue guardada exitosamente!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Agregar otra peli</button>
+    </div>
+  </div>
+</div>
